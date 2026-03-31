@@ -121,7 +121,7 @@ void discreteMode(vector<vector<unsigned char>> &trainImageData,
         for(int p=0;p<784;p++){
             int bestBin=0;
             int maxFreq=0;
-            for(int b=1;b<32;b++){
+            for(int b=0;b<32;b++){
                 if(frequencyCount[d][p][b]>maxFreq){
                     bestBin=b;
                     maxFreq=frequencyCount[d][p][b];
@@ -138,7 +138,7 @@ void discreteMode(vector<vector<unsigned char>> &trainImageData,
     for(int d=0;d<10;d++){
         for(int p=0;p<28;p++){
            for(int c=0;c<28;c++){
-               cout << (output[d][p*28 + c] > 150 ? "1" : "0");
+               cout << (output[d][p*28 + c] > 128 ? "1" : "0");
            }
            cout << endl;
         }
